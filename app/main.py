@@ -10,7 +10,7 @@ def run():
             print(f'Aviable years => {years}')
             year_start = input('Type start range year => ')
             year_end = input('Type end range year => ')
-            if int(year_start) < min_year  or int(year_end) > max_year or int(year_end) < min_year  or int(year_end) <= int(year_start) :
+            if int(year_start) < min_year or int(year_start) > max_year or int(year_end) > max_year or int(year_end) < min_year  or int(year_end) <= int(year_start) :
                 raise ValueError("El año de inicio o el año de fin están fuera del rango permitido.")
 
             found_years, prices = pkg.utils.get_prices_per_kilogram_per_year(data, year_start, year_end)
@@ -19,4 +19,4 @@ def run():
             print(error)
 if __name__ == '__main__':
     run()
-    _
+    
